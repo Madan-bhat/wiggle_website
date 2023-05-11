@@ -1,0 +1,13 @@
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+  .userListContainer {
+  height: 85vh;
+  width: 25vw;
+  border-radius: 24px;
+  margin-left: 40px;
+  box-shadow: black 2px 2px 45px;
+  background: rgba(0, 0, 0, 0.2);
+}
