@@ -1,13 +1,67 @@
 .container {
-  flex: 1;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
-  .userListContainer {
+
+.title {
+  font-size: 2.5em;
+}
+
+.userListContainer {
+  backdrop-filter: blur(10px);
   height: 85vh;
-  width: 25vw;
+  width: 22vw;
   border-radius: 24px;
-  margin-left: 40px;
-  box-shadow: black 2px 2px 45px;
-  background: rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  background: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.2px);
+  -webkit-backdrop-filter: blur(3.2px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  margin-left: 20px;
+  transition: all 0.2s ease-in;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.user {
+  background: white;
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.nameContainer {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: Poppins;
+}
+
+.message {
+  font-family: Poppins;
+}
+
+.cardContainer {
+  display: flex;
+  padding: 16px;
+  flex-direction: row;
+}
+
+.userListContainer:hover {
+  transform: scale(1.009, 1.009);
+}
+
+.user:hover {
+  transform: scale3d(1.02, 1.02, 1.02);
 }

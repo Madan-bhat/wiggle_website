@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 import Dashboard from "../src/pages/Dashboard/Dashboard";
 
 export default function App() {
@@ -9,5 +9,5 @@ export default function App() {
     setPressed(!pressed);
   }, [pressed]);
 
-  return !pressed ? <Login handlePressed={handlePressed} /> : <Dashboard />;
+  return !pressed ? <Register handlePressed={handlePressed} /> : <Dashboard />;
 }

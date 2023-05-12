@@ -1,4 +1,4 @@
-import "../Login/Login.styles.css";
+import "../Register/Register.styles.css";
 
 const Login = ({ handlePressed }: { handlePressed: () => void }) => {
   return (
