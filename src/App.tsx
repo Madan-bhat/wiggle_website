@@ -1,13 +1,10 @@
-import { useCallback, useState } from "react";
-import Register from "./pages/Register/Register";
-import Dashboard from "../src/pages/Dashboard/Dashboard";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/Routes";
+import { Provider } from "react-redux";
+import { store } from "./redux/store/store";
 
 export default function App() {
-  const [pressed, setPressed] = useState(false);
-
-  const handlePressed = useCallback(() => {
-    setPressed(!pressed);
-  }, [pressed]);
-
-  return !pressed ? <Register handlePressed={handlePressed} /> : <Dashboard />;
+  return <Provider store={store}>
+  <RouterProvider router={router} />
+  </Provider>
 }

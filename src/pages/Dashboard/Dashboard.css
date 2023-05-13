@@ -11,9 +11,9 @@
 .userListContainer {
   backdrop-filter: blur(10px);
   height: 85vh;
-  width: 22vw;
-  border-radius: 24px;
   padding: 24px;
+  width: 20vw;
+  border-radius: 24px;
   background: white;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.2px);
@@ -30,13 +30,22 @@
 }
 
 .user {
-  background: white;
+  margin: 4px 4px;
+  background-color: linear-gradient(white,white);
+  z-index: 1;
   backdrop-filter: blur(10px);
   margin-top: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:  all 0.3s ease-in-out,
 }
+
+.user:hover {
+  background-color:#ff5e62;
+  transform: scale(1.02, 1.02);
+}
+
+
 
 .nameContainer {
   margin-left: 8px;
@@ -48,8 +57,16 @@
   font-family: Poppins;
 }
 
-.message {
+.status {
   font-family: Poppins;
+}
+
+.user:hover .name {
+  color:white
+}
+
+.user:hover .status {
+  color:white
 }
 
 .cardContainer {
@@ -58,10 +75,35 @@
   flex-direction: row;
 }
 
+.userCardContainer {
+  overflow: auto;
+  -ms-overflow-style: none;
+  width: 100%;
+  scrollbar-width: 0px;
+  height: 65vh;
+}
+
+.searchInput {
+  padding: 16px;
+  font-size: 1em;
+  font-family: Poppins;
+  border-width: 0.5px;
+  border-color: grey;
+  margin: 4px 4px;
+  margin-top: 12px;
+  width: 85%;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+.searchInput:hover {
+  box-shadow: 0px 10px 105px rgba(68, 68, 68, 0.3);
+}
+
 .userListContainer:hover {
   transform: scale(1.009, 1.009);
 }
 
-.user:hover {
-  transform: scale3d(1.02, 1.02, 1.02);
-}
+
