@@ -1,26 +1,59 @@
 import { CometChat } from "@cometchat-pro/chat";
 import { useState, useEffect } from "react";
-
-export const useGetUsersList = () => {
-  const [users, setUsers] = useState<CometChat.User[]>([]);
-
-  useEffect(() => {
-    // Get information about the currently logged-in user
-    CometChat.getLoggedinUser().then((loggedInUser: any) => {
-      // Get a list of all the users in the app
-      const usersRequest = new CometChat.UsersRequestBuilder()
-        .setLimit(100)
-        .build();
-      usersRequest.fetchNext().then((userList) => {
-        // Remove the currently logged-in user from the list
-        const filteredUserList = userList.filter(
-          (user: any) => user?.uid !== loggedInUser?.uid
-        );
-        setUsers(filteredUserList);
-        console.log(filteredUserList);
+import { getUsers } from "../utils/firebase.methods";
+import { firestore } from "../utils/firebase";
+const useUsers = () => {
+  const [users, setUsers] = useState<any>([]);
+  const [error, setError] = useState<any>(null);
+  const getUsers = async () => {
+    try {
+      const usersList:
+        | ((prevState: never[]) => never[])
+        | {
+            uid: any;
+            username: any;
+            userimg: any;
+            bio: any;
+            email: any;
+            createdAt: any;
+            chats: any;
+            groups: any;
+            requests: any;
+          }[] = [];
+      const users = await firestore.collection("users").get();
+      users.forEach((data) => {
+        const {
+          uid,
+          username,
+          userimg,
+          bio,
+          email,
+          createdAt,
+          chats,
+          groups,
+          requests,
+        } = data.data();
+        usersList.push({
+          uid,
+          username,
+          userimg,
+          bio,
+          email,
+          createdAt,
+          chats,
+          groups,
+          requests,
+        });
       });
-    });
-  }, []);
+    } catch (error) {
+      setError(error);
+    }
+  };
+  useEffect(() => {
+    getUsers();
+  }, [users]);
 
-  return users;
+  return [users, error];
 };
+
+export default useUsers;

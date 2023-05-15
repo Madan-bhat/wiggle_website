@@ -1,18 +1,18 @@
-import { ReactElement, ReactNode, useState } from "react";
+import { useState } from "react";
 import "../Login/Login.css";
 
 const Login = () => {
-    const [form,setForm] = useState({
-        email:"",
-        password:''
-    })
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
 
-    const hadnleInputChange = (key:string,value:string) => {
-        setForm({
-            ...form,
-            [key]:value
-        })
-    }
+  const hadnleInputChange = (key: string, value: string) => {
+    setForm({
+      ...form,
+      [key]: value,
+    });
+  };
 
   return (
     <div className="App">
@@ -35,4 +35,4 @@ const Login = () => {
   );
 };
 
-export default (Login);
+export default Login;

@@ -2,8 +2,6 @@ import "./NavBar.css";
 import { Video, Phone } from "react-feather";
 
 const Navbar = (props: any) => {
-  console.log(props);
-
   return (
     <div className="navbar">
       <div

@@ -1,17 +1,38 @@
 .container {
   display: flex;
   flex: 1;
-  padding: 24px;
+  padding: 32px;
 }
-.container1 {
+.userList {
   flex: 0.8;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   height: 90vh;
-  background-color: red;
+  transition: all 0.2s ease-in-out;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(68, 68, 68, 0.3);
 }
-.container2 {
-  flex: 2;
-  margin-left: 8px;
+
+.userList:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.02,1.02);
+}
+
+.chat {
+  flex: 2.2;
+  margin-left: 32px;
+  border-radius: 8px;
   height: 90vh;
   flex-direction: column;
-  background-color: pink;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(68, 68, 68, 0.3);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.chat:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.02,1.02);
 }

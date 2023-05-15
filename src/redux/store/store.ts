@@ -1,14 +1,9 @@
-import {configureStore} from '@reduxjs/toolkit';
-import {setupListeners} from '@reduxjs/toolkit/dist/query';
-import { moviesService } from '../api/api';
-import { reducer } from '../reducers';
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import reducers from "../reducers/reducers";
 
 export const store = configureStore({
-  reducer: reducer,
-  middleware: gDM =>
-    gDM().concat(
-      moviesService.middleware,
-    ),
+  reducer: reducers,
 });
 
 setupListeners(store.dispatch);
